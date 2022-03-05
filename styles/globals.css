@@ -9,6 +9,7 @@ body {
 body {
   display: flex;
   align-items: stretch;
+  padding: 16px;
 }
 
 a {

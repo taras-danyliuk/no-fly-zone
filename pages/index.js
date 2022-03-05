@@ -1,31 +1,18 @@
 import Head from 'next/head'
-import { useState, useEffect } from "react";
-import { formatDuration, intervalToDuration } from 'date-fns'
 
 import dbConnect from "../lib/dbConnect";
-import Info from "../models/info";
+import Statistic from "../models/statistic";
+import Country from "../models/country";
+import Clock from "../components/Clock/Clock";
+import Section from "../components/Section/Section";
+import CountryRow from "../components/CountryRow/CountryRow";
 
 
 const start = new Date("2022-02-24T02:00:00.000Z");
 
-export default function Home() {
-  const [duration, setDuration] = useState(formatDuration(intervalToDuration({
-    start: start,
-    end: new Date()
-  })));
+export default function Home(props) {
+  console.log(props)
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDuration(formatDuration(intervalToDuration({
-        start: start,
-        end: new Date()
-      })))
-    }, 1000)
-
-    return () => {
-      clearTimeout(intervalId)
-    }
-  }, []);
 
   return (
     <div className="h-100">
@@ -35,27 +22,42 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex-column align-center">
-        <h1>The war in Ukraine lasts for:</h1>
-        <h2>{duration}</h2>
+      <Clock/>
+
+      <div className="flex-column align-stretch">
+        <Section name="Casualties by that time:" items={props.statistics}/>
+
+        <Section name="Refugees:" items={props.statistics}/>
       </div>
 
-      <div className="flex-column align-center">
-        <h3>Casualties by that time:</h3>
+      <div className="flex-column align-stretch">
+        <h3 className="text-center">Votes:</h3>
+
+        {props.countries.map(country => <CountryRow key={country.name} country={country}/>)}
       </div>
     </div>
   )
 }
 
-export async function getServerSideProps({ params }) {
-  await dbConnect()
+export async function getServerSideProps() {
+  await dbConnect();
 
-  const result = await Info.find({}).lean()
-  const info = result.map((doc) => {
-    const pet = doc.toObject()
-    pet._id = pet._id.toString()
-    return pet
-  })
+  const statisticsResult = await Statistic.find({}).lean();
+  const statistics = statisticsResult.map(doc => ({
+    ...doc,
+    _id: doc._id.toString(),
+    breakpoints: doc.breakpoints.map(br => ({
+      ...br,
+      _id: br._id.toString()
+    }))
+  }));
 
-  return { props: { pets: pets } }
+  const countriesResult = await Country.find({}).lean();
+  const countries = countriesResult.map(doc => ({
+    ...doc,
+    _id: doc._id.toString(),
+    date: doc.date.toISOString()
+  }));
+
+  return { props: { statistics, countries } };
 }
