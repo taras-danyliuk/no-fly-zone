@@ -10,14 +10,14 @@ export const Bar = styled.div `
   flex: 1;
   border-radius: 12px;
   height: 24px;
-  background-color: gray;
+  background-color: var(--gray);
 `
 
 export const BarProgress = styled.div `
-  background-color: darkred;
+  background-color: var(--red);
   border-radius: 12px;
   text-align: center;
   height: 100%;
-  color: white;
+  color: var(--white);
   line-height: 24px;
 `
