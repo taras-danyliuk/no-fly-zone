@@ -1,7 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { useState, useEffect } from "react";
 import { formatDuration, intervalToDuration } from 'date-fns'
+
+import dbConnect from "../lib/dbConnect";
+import Info from "../models/info";
 
 
 const start = new Date("2022-02-24T02:00:00.000Z");
@@ -43,4 +45,17 @@ export default function Home() {
       </div>
     </div>
   )
+}
+
+export async function getServerSideProps({ params }) {
+  await dbConnect()
+
+  const result = await Info.find({}).lean()
+  const info = result.map((doc) => {
+    const pet = doc.toObject()
+    pet._id = pet._id.toString()
+    return pet
+  })
+
+  return { props: { pets: pets } }
 }
