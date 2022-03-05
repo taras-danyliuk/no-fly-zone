@@ -6,12 +6,12 @@ import Country from "../models/country";
 import Clock from "../components/Clock/Clock";
 import Section from "../components/Section/Section";
 import CountryRow from "../components/CountryRow/CountryRow";
+import { useMemo } from "react";
 
-
-const start = new Date("2022-02-24T02:00:00.000Z");
 
 export default function Home(props) {
-  console.log(props)
+  const casualties = useMemo(() => props.statistics.filter(s => s.section === "Casualties"), [props.statistics]);
+  const refugees = useMemo(() => props.statistics.filter(s => s.section === "Refugees"), [props.statistics]);
 
 
   return (
@@ -25,9 +25,9 @@ export default function Home(props) {
       <Clock/>
 
       <div className="flex-column align-stretch">
-        <Section name="Casualties by that time:" items={props.statistics}/>
+        <Section name="Casualties by that time:" items={casualties}/>
 
-        <Section name="Refugees:" items={props.statistics}/>
+        <Section name="Refugees:" items={refugees}/>
       </div>
 
       <div className="flex-column align-stretch">
