@@ -1,24 +1,35 @@
-import { formatDuration, intervalToDuration } from "date-fns";
+import { intervalToDuration } from "date-fns";
 import { useState, useEffect } from "react";
 
-import { Wrapper } from "./clock.styles";
+import { Time, Title, Wrapper } from "./clock.styles";
 
 
-const start = new Date("2022-02-24T02:00:00.000Z");
+const start = new Date("2022-02-24T04:00:00.000Z");
+const format = duration => {
+  let result = "";
+  Object.entries(duration).forEach(([key, value]) => {
+    if (!value) return;
+    result += `<span>${value}</span> ${value === 1 ? key.substr(0, key.length - 1) : key} `;
+  });
+
+  return {
+    __html: result
+  };
+}
 
 
 const Clock = () => {
-  const [duration, setDuration] = useState(formatDuration(intervalToDuration({
+  const [duration, setDuration] = useState(intervalToDuration({
     start: start,
     end: new Date()
-  })));
+  }));
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setDuration(formatDuration(intervalToDuration({
+      setDuration(intervalToDuration({
         start: start,
         end: new Date()
-      })));
+      }));
     }, 1000);
 
     return () => clearTimeout(intervalId);
@@ -27,8 +38,8 @@ const Clock = () => {
 
   return (
     <Wrapper>
-      <h1>The war in Ukraine lasts for:</h1>
-      <h2>{duration}</h2>
+      <Title>Ukraine is being bombed for:</Title>
+      <Time dangerouslySetInnerHTML={format(duration)}/>
     </Wrapper>
   )
 }
