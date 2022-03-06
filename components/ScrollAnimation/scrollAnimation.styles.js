@@ -13,8 +13,8 @@ export const ParallaxBlock = styled(Parallax) `
 `
 
 export const Building = styled.div `
-  position: fixed;
-  bottom: 50px;
+  position: ${props => props.position === "right" ? "fixed" : "absolute"};
+  top: ${props => props.position === "right" ? "calc(100vh - 130px)" : "calc(200vh - 130px)"};
   height: 80px;
   width: 150px;
   background-color: pink;
