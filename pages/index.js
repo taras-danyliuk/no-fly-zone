@@ -4,13 +4,14 @@ import { SlideHome } from "../slides/home";
 import dbConnect from "../lib/dbConnect";
 import Statistic from "../models/statistic";
 import Info from "../models/info";
+import Statistics from "../slides/statistics/Statistics";
 
 
-export default function Index({ info }) {
+export default function Index({ info, statistics }) {
   return (
     <main>
       <SlideHome info={info}/>
-      <Slide></Slide>
+      <Statistics statistics={statistics}/>
       <Slide></Slide>
     </main>
   );

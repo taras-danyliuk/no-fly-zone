@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Bar, BarProgress, Label } from "./sectionRow.styles";
+import { Bar, BarHolder, BarProgress, BarValue, Label, Wrapper } from "./sectionRow.styles";
 
 
 const SectionRow = ({ statistic }) => {
@@ -9,13 +9,17 @@ const SectionRow = ({ statistic }) => {
   )
 
   return (
-    <div className="flex w-100 mv-1">
+    <Wrapper>
       <Label>{statistic.name}</Label>
 
-      <Bar>
-        <BarProgress style={{ width: `${width}%` }}>{statistic.currentNumber}</BarProgress>
-      </Bar>
-    </div>
+      <BarHolder>
+        <BarValue>{statistic.currentNumber}</BarValue>
+
+        <Bar>
+          <BarProgress style={{ width: `${width}%` }}/>
+        </Bar>
+      </BarHolder>
+    </Wrapper>
   )
 }
 

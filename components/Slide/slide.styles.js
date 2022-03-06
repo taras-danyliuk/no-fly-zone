@@ -32,9 +32,3 @@ export const Hashtag = styled.header`
     font-size: 24px; 
   }
 `;
-
-export const HR = styled.hr`
-  border-top: 1px solid black;
-  width: 42px;
-  margin-bottom: 28px;
-`;

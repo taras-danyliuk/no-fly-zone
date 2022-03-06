@@ -2,6 +2,8 @@
   --color-red-main: #c50000;
 
   --slide-bg: #ffffff;
+  --red-bg: #C40000;
+  --gray-bg: #E9E9E9;
 
   --pie-chart-progress-fill: var(--color-red-main);
   --pie-chart-whole-fill: #e7e7e7;
@@ -53,4 +55,8 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+.text-red {
+  color: var(--color-red-main)!important;
 }

@@ -1,5 +1,6 @@
 import React from "react";
-import { Wrapper, Hashtag, HR } from "./slide.styles";
+import { Wrapper, Hashtag } from "./slide.styles";
+import { HR } from "../../styles/shared.styles";
 
 export const Slide = ({ children }) => {
   return (
