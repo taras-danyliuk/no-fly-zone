@@ -18,8 +18,8 @@ const Clock = () => {
       setDuration(formatDuration(intervalToDuration({
         start: start,
         end: new Date()
-      })))
-    }, 1000)
+      })));
+    }, 1000);
 
     return () => clearTimeout(intervalId);
   }, []);
