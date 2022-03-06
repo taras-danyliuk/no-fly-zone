@@ -1,6 +1,4 @@
 import React from "react";
-import { CardContainer, Card, CardRow } from "../Card";
-import { PieChart } from "../Charts/pie";
 import { Wrapper, Hashtag, HR } from "./slide.styles";
 
 export const Slide = ({ children }) => {

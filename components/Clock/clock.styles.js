@@ -12,6 +12,11 @@ export const Title = styled.h2 `
   line-height: 28.8px;
   color: var(--black);
   font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    line-height: 29.64px;
+  }
 `
 
 export const Time = styled.p `
@@ -22,6 +27,17 @@ export const Time = styled.p `
   margin: 0;
   
   span {
-    color: var(--red)
+    color: var(--text-main)
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+    line-height: 35.57px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 17px;
+    line-height: 30.1px;
+    letter-spacing: 0;
   }
 `

@@ -3,6 +3,14 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   position: relative;
   max-width: 193px;
+
+  @media screen and (max-width: 768px) {
+    max-width: 132px;
+  }
+
+  @media screen and (max-width: 576px) {
+    max-width: 120px;
+  }
 `;
 
 export const RingBase = styled.svg`

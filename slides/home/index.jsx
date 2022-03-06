@@ -9,6 +9,7 @@ import {
   InfoCardValue,
   InfoCardPieContent,
 } from "./slide-home.styles";
+import Clock from "../../components/Clock/Clock";
 
 const InfoCard = ({ borderDirection }) => {
   return (
@@ -19,9 +20,11 @@ const InfoCard = ({ borderDirection }) => {
           <InfoCardValue>125</InfoCardValue>
           <InfoCardDescription>During the war</InfoCardDescription>
         </div>
+
         <PieChart value={10}>
           <InfoCardPieContent>
-            Next death expected in: <br />
+            Next death expected in:
+            <br />
             <strong>4 hours</strong>
           </InfoCardPieContent>
         </PieChart>
@@ -33,6 +36,8 @@ const InfoCard = ({ borderDirection }) => {
 export const SlideHome = () => {
   return (
     <Slide>
+      <Clock/>
+
       <CardContainer>
         <InfoCard borderDirection="bottom" />
         <InfoCard borderDirection="left" />

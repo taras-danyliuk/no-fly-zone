@@ -6,7 +6,7 @@ export default function News() {
   return (
     <>
       <main>
-        <SlideHome></SlideHome>
+        <SlideHome/>
         <Slide></Slide>
         <Slide></Slide>
       </main>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Card } from "../../components/Card";
 
 const borders = {
   bottom: {
@@ -46,35 +45,85 @@ const borders = {
   },
 };
 
-export const InfoCardWrapper = styled.div((props) => ({
-  display: "flex",
-  flex: 1,
-  justifyContent: "space-between",
-  alignItems: "center",
-  ...borders[props.borderDirection],
-}));
+export const InfoCardWrapper = styled.div `
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  ${props => borders[props.borderDirection]};
 
-export const InfoCardValue = styled.h1`
+  @media screen and (max-width: 768px) {
+    padding: 25px 100px;
+    border: none;
+  };
+
+  @media screen and (max-width: 576px) {
+    padding: 25px 25px;
+  }
+`
+
+export const InfoCardValue = styled.span`
   font-size: 64px;
-  font-weight: medium;
+  line-height: 64px;
+  letter-spacing: 1px;
+  font-weight: 400;
   color: var(--text-main);
+
+  @media screen and (max-width: 768px) {
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 36px;
+    line-height: 36px;
+  }
 `;
 
 export const InfoCardLabel = styled.p`
   font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  font-weight: 300;
   color: var(--text-main);
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 14px;
+  }
 `;
 
 export const InfoCardDescription = styled.p`
   color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 27px;
+
+  @media screen and (max-width: 576px) {
+    font-size: 12px;
+  }
 `;
 
 export const InfoCardPieContent = styled.div`
+  font-size: 18px;
+  line-height: 23px;
   padding: 0 24px;
   text-align: center;
+  letter-spacing: 0.44px;
 
   strong {
     color: var(--text-main);
     font-weight: bold;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 11px;
+    line-height: 17px;
   }
 `;
