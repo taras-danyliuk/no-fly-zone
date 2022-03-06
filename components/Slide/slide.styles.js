@@ -8,7 +8,6 @@ export const Wrapper = styled.article`
   align-items: center;
   padding: 72px 156px;
   position: relative;
-  border: 1px solid green;
   
   @media screen and (max-width: 768px) {
     padding: 64px 82px; 

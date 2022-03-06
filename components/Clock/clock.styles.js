@@ -5,6 +5,15 @@ export const Wrapper = styled.div `
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 62px;
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-bottom: 23px;
+  }
 `
 
 export const Title = styled.h2 `
