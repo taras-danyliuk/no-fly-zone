@@ -1,66 +1,18 @@
-import Head from "next/head";
-
+import { Head } from "next/head";
+import { Slide } from "../components/Slide";
+import { SlideHome } from "../slides/home";
 import dbConnect from "../lib/dbConnect";
 import Statistic from "../models/statistic";
-import Country from "../models/country";
-import Clock from "../components/Clock/Clock";
-import Section from "../components/Section/Section";
-import CountryRow from "../components/CountryRow/CountryRow";
-import { useMemo } from "react";
-import ScrollAnimation from "../components/ScrollAnimation/ScrollAnimation";
+import Info from "../models/info";
 
 
-export default function Home(props) {
-  const casualties = useMemo(() => props.statistics.filter(s => s.section === "Casualties"), [props.statistics]);
-  const refugees = useMemo(() => props.statistics.filter(s => s.section === "Refugees"), [props.statistics]);
-
-
+export default function Index({ info }) {
   return (
-    <div className="h-100">
-      <Head>
-        <title>No Fly Zone</title>
-        <meta name="description" content="Close the sky above Ukraine"/>
-        <link rel="icon" href="/favicon.ico"/>
-      </Head>
-
-      <div className="screen" style={{ background: "#eee" }}>
-        <Clock/>
-
-        <ScrollAnimation position="left"/>
-      </div>
-
-
-      <div className="screen" style={{ background: "cadetblue" }}>
-        <div className="flex-column align-stretch">
-          <Section name="Casualties by that time:" items={casualties}/>
-
-          <Section name="Refugees:" items={refugees}/>
-        </div>
-
-        <ScrollAnimation position="right"/>
-      </div>
-
-
-      <div className="screen" style={{ background: "#eee" }}>
-        <Clock/>
-
-        <ScrollAnimation position="center"/>
-      </div>
-
-      <div className="screen" style={{ background: "lightgoldenrodyellow" }}>
-        <div className="flex-column align-stretch">
-          <h3 className="text-center">Votes:</h3>
-
-          {props.countries.map(country => <CountryRow key={country.name} country={country}/>)}
-        </div>
-
-        <div className="flex-column" style={{ marginTop: "50vh" }}>
-          <button className="align-self-center" style={{ height: "50px", width: "200px" }}>Stop</button>
-        </div>
-
-        <div style={{ width: "300px", height: "100px", backgroundColor: "pink", position: "absolute", bottom: "100px", left: "50%", transform: "translateX(-50%)" }}/>
-      </div>
-    </div>
+    <main>
+      <SlideHome info={info}/>
+      <Slide></Slide>
+      <Slide></Slide>
+    </main>
   );
 }
 
@@ -77,12 +29,20 @@ export async function getServerSideProps() {
     }))
   }));
 
-  const countriesResult = await Country.find({}).lean();
-  const countries = countriesResult.map(doc => ({
-    ...doc,
-    _id: doc._id.toString(),
-    date: doc.date.toISOString()
-  }));
 
-  return { props: { statistics, countries } };
+  const info = {
+    kids: { name: "Kids killed", currentNumber: 0 },
+    adults: { name: "Adults killed", currentNumber: 0 },
+    injured: { name: "People injured", currentNumber: 0 },
+    refugees: { name: "Refugees", currentNumber: 0 }
+  }
+  const infoResult = await Info.find({}).lean();
+  infoResult.forEach(doc => {
+    if (doc.name === "Kids killed") info.kids = { ...doc, _id: doc._id.toString() };
+    else if (doc.name === "Adults killed") info.adults = { ...doc, _id: doc._id.toString() };
+    else if (doc.name === "People injured") info.injured = { ...doc, _id: doc._id.toString() };
+    else if (doc.name === "Refugees") info.refugees = { ...doc, _id: doc._id.toString() };
+  });
+
+  return { props: { statistics, info } };
 }

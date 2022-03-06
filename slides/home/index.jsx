@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { CardContainer, Card } from "../../components/Card";
 import { Slide } from "../../components/Slide";
 import { PieChart } from "../../components/Charts/pie";
+import Clock from "../../components/Clock/Clock";
 import {
   InfoCardWrapper,
   InfoCardDescription,
@@ -9,23 +10,33 @@ import {
   InfoCardValue,
   InfoCardPieContent,
 } from "./slide-home.styles";
-import Clock from "../../components/Clock/Clock";
+import { WAR_START } from "../../helpers/constants";
+import secondsToTime from "../../helpers/secondsToTime";
 
-const InfoCard = ({ borderDirection }) => {
+
+const InfoCard = ({ borderDirection, data, pieLabel }) => {
+  const chartValue = useMemo(() => {
+    const diffInSeconds = (new Date().valueOf() - WAR_START.valueOf()) / 1000;
+    const rate = diffInSeconds / data.currentNumber;
+
+    return secondsToTime(rate, diffInSeconds);
+  }, [data.currentNumber]);
+
+
   return (
     <Card>
       <InfoCardWrapper borderDirection={borderDirection}>
         <div>
-          <InfoCardLabel>Kids killed:</InfoCardLabel>
-          <InfoCardValue>125</InfoCardValue>
+          <InfoCardLabel>{data.name}:</InfoCardLabel>
+          <InfoCardValue>{data.currentNumber}</InfoCardValue>
           <InfoCardDescription>During the war</InfoCardDescription>
         </div>
 
-        <PieChart value={10}>
+        <PieChart value={chartValue.value}>
           <InfoCardPieContent>
-            Next death expected in:
+            Next {pieLabel} expected in:
             <br />
-            <strong>4 hours</strong>
+            <strong>{chartValue.text}</strong>
           </InfoCardPieContent>
         </PieChart>
       </InfoCardWrapper>
@@ -33,16 +44,16 @@ const InfoCard = ({ borderDirection }) => {
   );
 };
 
-export const SlideHome = () => {
+export const SlideHome = ({ info }) => {
   return (
     <Slide>
       <Clock/>
 
       <CardContainer>
-        <InfoCard borderDirection="bottom" />
-        <InfoCard borderDirection="left" />
-        <InfoCard borderDirection="right" />
-        <InfoCard borderDirection="top" />
+        <InfoCard borderDirection="bottom" data={info.kids} pieLabel="death"/>
+        <InfoCard borderDirection="left" data={info.adults} pieLabel="death"/>
+        <InfoCard borderDirection="right" data={info.injured} pieLabel="injury"/>
+        <InfoCard borderDirection="top" data={info.refugees} pieLabel="refugee"/>
       </CardContainer>
     </Slide>
   );

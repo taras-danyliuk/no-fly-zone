@@ -2,9 +2,9 @@ import { intervalToDuration } from "date-fns";
 import { useState, useEffect } from "react";
 
 import { Time, Title, Wrapper } from "./clock.styles";
+import { WAR_START } from "../../helpers/constants";
 
 
-const start = new Date("2022-02-24T04:00:00.000Z");
 const format = duration => {
   let result = "";
   Object.entries(duration).forEach(([key, value]) => {
@@ -20,14 +20,14 @@ const format = duration => {
 
 const Clock = () => {
   const [duration, setDuration] = useState(intervalToDuration({
-    start: start,
+    start: WAR_START,
     end: new Date()
   }));
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setDuration(intervalToDuration({
-        start: start,
+        start: WAR_START,
         end: new Date()
       }));
     }, 1000);
