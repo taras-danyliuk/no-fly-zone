@@ -1,7 +1,7 @@
 import { Slide } from "../../components/Slide";
-import { Holder, SectionTitle, Title } from "./statistics.styles";
 import { HR } from "../../styles/shared.styles";
 import SectionRow from "../../components/SectionRow/SectionRow";
+import { Holder, SectionTitle, Title } from "./statistics.styles";
 
 
 const Statistics = ({ statistics }) => {

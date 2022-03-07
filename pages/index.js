@@ -1,10 +1,11 @@
 import { Head } from "next/head";
-import { Slide } from "../components/Slide";
 import { SlideHome } from "../slides/home";
 import dbConnect from "../lib/dbConnect";
 import Statistic from "../models/statistic";
 import Info from "../models/info";
 import Statistics from "../slides/statistics/Statistics";
+import Images from "../slides/images/Images";
+import Share from "../slides/share/Share";
 
 
 export default function Index({ info, statistics }) {
@@ -12,7 +13,8 @@ export default function Index({ info, statistics }) {
     <main>
       <SlideHome info={info}/>
       <Statistics statistics={statistics}/>
-      <Slide></Slide>
+      <Images/>
+      <Share/>
     </main>
   );
 }

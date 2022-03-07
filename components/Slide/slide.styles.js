@@ -6,15 +6,16 @@ export const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 72px 156px;
+  padding: ${props => props.noPadding ? "0" : "72px 156px"};
   position: relative;
+  justify-content: ${props => props.justify || "flex-start"};
   
   @media screen and (max-width: 768px) {
-    padding: 64px 82px; 
+    padding: ${props => props.noPadding ? "0" : "64px 82px"};
   }
   
   @media screen and (max-width: 576px) {
-    padding: 32px 16px;
+    padding: ${props => props.noPadding ? "0" : "32px 16px"};
   }
 `;
 

@@ -15,6 +15,7 @@ export const Label = styled.span `
   line-height: 23px;
   font-weight: 600;
   color: var(--text-secondary);
+  text-align: center;
 `
 
 export const BarHolder = styled.div `
