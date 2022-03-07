@@ -24,6 +24,7 @@ export const Hashtag = styled.header`
   color: var(--text-secondary);
   margin-bottom: 24px;
   font-family: var(--font-main);
+  font-weight: 700;
 
   @media screen and (max-width: 768px) {
     font-size: 48px;

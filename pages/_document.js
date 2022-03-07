@@ -4,13 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link
-          rel="preload"
-          href="/fonts/Roslindale-DisplayLight-Testing.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'/>
       </Head>
       <body>
         <Main />

@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Roslindale";
+  src: url("/fonts/Roslindale-TextRegular-Testing.woff2") format("woff2"),
+  url("/fonts/Roslindale-TextRegular-Testing.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roslindale";
+  src: url("/fonts/Roslindale-TextBold-Testing.woff2") format("woff2"),
+  url("/fonts/Roslindale-TextBold-Testing.woff") format("woff");
+  font-weight: 700;
+}
+
 :root {
   --color-red-main: #c50000;
 
@@ -14,7 +28,7 @@
   --card-keyline: #c4c4c4;
 
   --font-main: "Roslindale";
-  /* --font-secondary: 'Roslindale'; */
+  --font-secondary: 'Open Sans';
 }
 
 html,

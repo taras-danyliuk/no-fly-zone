@@ -8,7 +8,7 @@ export const Slide = ({ hideHashtag, noPadding, justify, children }) => {
       {!hideHashtag && (
         <>
           <Hashtag>
-            <h1>#NoFlyZone</h1>
+            <h2>#NoFlyZone</h2>
           </Hashtag>
           <HR />
         </>

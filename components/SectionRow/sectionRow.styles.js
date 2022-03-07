@@ -41,6 +41,7 @@ export const Label = styled.span `
   font-weight: 600;
   color: var(--text-secondary);
   text-align: center;
+  font-family: var(--font-secondary);
 
   @media screen and (max-width: 768px) {
     font-size: 20px;
@@ -102,6 +103,7 @@ export const BreakpointTitle = styled.span `
   line-height: 23px;
   font-weight: 400;
   position: relative;
+  font-family: var(--font-secondary);
   
   &:after {
     content: "";
@@ -125,4 +127,6 @@ export const BreakpointValue = styled.span `
   font-size: 14px;
   line-height: 23px;
   font-weight: 600;
+  font-family: var(--font-secondary);
+  letter-spacing: 0.44px;
 `

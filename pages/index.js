@@ -6,11 +6,13 @@ import Info from "../models/info";
 import Statistics from "../slides/statistics/Statistics";
 import Images from "../slides/images/Images";
 import Share from "../slides/share/Share";
+import Main from "../slides/main/Main";
 
 
 export default function Index({ info, statistics }) {
   return (
     <main>
+      <Main kids={info.kids}/>
       <SlideHome info={info}/>
       <Statistics statistics={statistics}/>
       <Images/>
