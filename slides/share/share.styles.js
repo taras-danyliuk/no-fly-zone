@@ -27,7 +27,7 @@ export const Row = styled.div `
   margin-top: 40px;
 `
 
-export const Link = styled.a `
+export const Link = styled.div `
   text-decoration: none;
   display: flex;
   justify-content: center;

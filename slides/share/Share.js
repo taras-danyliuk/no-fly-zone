@@ -1,12 +1,23 @@
-import Image from 'next/image';
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  PinterestShareButton,
+  TelegramShareButton,
+  TwitterShareButton, ViberShareButton
+} from "react-share";
 import { Slide } from "../../components/Slide";
-import { Link, Row, Title } from "./share.styles";
 import FacebookIcon from "../../components/Icons/FacebookIcon";
 import TwitterIcon from "../../components/Icons/TwitterIcon";
 import LinkedinIcon from "../../components/Icons/LinkedinIcon";
 import ViberIcon from "../../components/Icons/ViberIcon";
 import TelegramIcon from "../../components/Icons/TelegramIcon";
 import PinterestIcon from "../../components/Icons/PinterestIcon";
+import { Link, Row, Title } from "./share.styles";
+
+
+const url = "https://no-fly-zone.vercel.app/";
+const message = "Close the sky over Ukraine";
+const hashtag = "#NoFlyZoneOverUkraine"
 
 
 const Share = () => {
@@ -19,29 +30,41 @@ const Share = () => {
       </Title>
 
       <Row>
-        <Link hoverColor="#1877F2">
-          <FacebookIcon width="42px" height="42px"/>
-        </Link>
+        <FacebookShareButton url={url} quote={message} hashtag={hashtag}>
+          <Link hoverColor="#1877F2">
+            <FacebookIcon width="42px" height="42px"/>
+          </Link>
+        </FacebookShareButton>
 
-        <Link hoverColor="#1DA1F2">
-          <TwitterIcon width="42px" height="42px"/>
-        </Link>
+        <TwitterShareButton url={url} hashtags={[hashtag]} title={message}>
+          <Link hoverColor="#1DA1F2">
+            <TwitterIcon width="42px" height="42px"/>
+          </Link>
+        </TwitterShareButton>
 
-        <Link hoverColor="#0A66C2">
-          <LinkedinIcon width="42px" height="42px"/>
-        </Link>
+        <LinkedinShareButton url={url} title={message}>
+          <Link hoverColor="#0A66C2">
+            <LinkedinIcon width="42px" height="42px"/>
+          </Link>
+        </LinkedinShareButton>
 
-        <Link hoverColor="#59267C">
-          <ViberIcon width="42px" height="42px"/>
-        </Link>
+        <ViberShareButton url={url} title={message}>
+          <Link hoverColor="#59267C">
+            <ViberIcon width="42px" height="42px"/>
+          </Link>
+        </ViberShareButton>
 
-        <Link hoverColor="#0088CC">
-          <TelegramIcon width="42px" height="42px"/>
-        </Link>
+        <TelegramShareButton url={url} title={message}>
+          <Link hoverColor="#0088CC">
+            <TelegramIcon width="42px" height="42px"/>
+          </Link>
+        </TelegramShareButton>
 
-        <Link hoverColor="#E60023">
-          <PinterestIcon width="42px" height="42px"/>
-        </Link>
+        <PinterestShareButton url={url} media={`${url}/images/image-14.png`} description={message}>
+          <Link hoverColor="#E60023">
+            <PinterestIcon width="42px" height="42px"/>
+          </Link>
+        </PinterestShareButton>
       </Row>
     </Slide>
   )
