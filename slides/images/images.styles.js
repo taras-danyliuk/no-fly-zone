@@ -10,6 +10,14 @@ export const Wrapper = styled.div `
   width: 100%;
   height: 100vh;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    padding: 60px;
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 30px;
+  }
 `
 
 export const ImageBlock = styled.div `
@@ -26,6 +34,14 @@ export const ImageBlock = styled.div `
     bottom: 0;
     left: 0;
     background-color: rgba(0,0,0,0.8);
+  }
+
+  @media screen and (max-width: 768px) {
+    height: calc(50vh - 70px);
+  }
+
+  @media screen and (max-width: 576px) {
+    height: calc(50vh - 40px);
   }
 `
 

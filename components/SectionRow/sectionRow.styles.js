@@ -61,10 +61,12 @@ export const BarValue = styled.p `
 
   @media screen and (max-width: 768px) {
     font-size: 20px;
+    left: 16px;
   }
 
   @media screen and (max-width: 576px) {
     font-size: 18px;
+    left: 12px;
   }
 `
 
@@ -82,4 +84,45 @@ export const BarProgress = styled.div `
   height: 100%;
   color: var(--white);
   line-height: 8px;
+`
+
+export const BarBreakpoint = styled.div `
+  position: absolute;
+  top: -44px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const BreakpointTitle = styled.span `
+  color: var(--red-bg);
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  position: relative;
+  
+  &:after {
+    content: "";
+    border-top: 6px solid var(--red-bg);
+    border-left: 4.5px solid transparent;
+    border-right: 4.5px solid transparent;
+    width: 0;
+    position: absolute;
+    left: calc(50% - 4px);
+    bottom: -7px;
+  }
+`
+
+export const BreakpointLine = styled.div `
+  border-right: 1px dashed var(--red-bg);
+  margin: 10px 0 30px;
+  flex: 1;
+`
+
+export const BreakpointValue = styled.span `
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 600;
 `

@@ -1,13 +1,25 @@
 import { useMemo } from "react";
 import Image from 'next/image'
-import { Bar, BarHolder, BarProgress, BarValue, Label, TextHolder, Wrapper } from "./sectionRow.styles";
+import {
+  Bar,
+  BarBreakpoint,
+  BarHolder,
+  BarProgress,
+  BarValue, BreakpointLine,
+  BreakpointTitle, BreakpointValue,
+  Label,
+  TextHolder,
+  Wrapper
+} from "./sectionRow.styles";
 
 
 const SectionRow = ({ statistic }) => {
   const width = useMemo(
     () => statistic.currentNumber * 100 / statistic.maxNumber,
     [statistic.currentNumber, statistic.maxNumber]
-  )
+  );
+
+  console.log(statistic.breakpoints);
 
   return (
     <Wrapper>
@@ -23,6 +35,14 @@ const SectionRow = ({ statistic }) => {
         <Bar>
           <BarProgress style={{ width: `${width}%` }}/>
         </Bar>
+
+        {statistic.breakpoints.map(b => (
+          <BarBreakpoint key={b._id} style={{ left: `${b.value * 100 / statistic.maxNumber}%` }}>
+            <BreakpointTitle>{b.name}</BreakpointTitle>
+            <BreakpointLine/>
+            <BreakpointValue>{b.value}</BreakpointValue>
+          </BarBreakpoint>
+        ))}
       </BarHolder>
     </Wrapper>
   )
