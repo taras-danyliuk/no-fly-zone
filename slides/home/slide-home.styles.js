@@ -45,22 +45,32 @@ const borders = {
   },
 };
 
-export const InfoCardWrapper = styled.div `
+export const InfoCardWrapper = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-between;
   align-items: center;
-  ${props => borders[props.borderDirection]};
+  ${(props) => borders[props.borderDirection]};
 
-  @media screen and (max-width: 768px) {
-    padding: 25px 100px;
+  @media screen and (max-width: 1400px) {
+    padding: 25px 250px;
     border: none;
-  };
+  }
+
+  @media screen and (max-width: 1105px) {
+    padding: 25px 150px;
+    border: none;
+  }
+
+  @media screen and (max-width: 920px) {
+    padding: 25px 50px;
+    border: none;
+  }
 
   @media screen and (max-width: 576px) {
     padding: 25px 25px;
   }
-`
+`;
 
 export const InfoCardValue = styled.span`
   font-size: 64px;

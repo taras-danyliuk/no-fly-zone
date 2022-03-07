@@ -2,13 +2,16 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   position: relative;
+  min-width: 193px;
   max-width: 193px;
 
   @media screen and (max-width: 768px) {
+    min-width: 132px;
     max-width: 132px;
   }
 
   @media screen and (max-width: 576px) {
+    min-width: 120px;
     max-width: 120px;
   }
 `;
