@@ -1,4 +1,4 @@
-import { Head } from "next/head";
+import Head from "next/head";
 import { SlideHome } from "../slides/home";
 import dbConnect from "../lib/dbConnect";
 import Statistic from "../models/statistic";
@@ -12,6 +12,12 @@ import Main from "../slides/main/Main";
 export default function Index({ info, statistics }) {
   return (
     <main>
+      <Head>
+        <title>No Fly Zone</title>
+        <meta name="description" content="Close the sky above Ukraine"/>
+        <link rel="icon" href="/favicon.ico"/>
+      </Head>
+
       <Main kids={info.kids}/>
       <SlideHome info={info}/>
       <Statistics statistics={statistics}/>

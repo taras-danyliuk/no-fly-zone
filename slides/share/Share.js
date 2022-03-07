@@ -16,8 +16,8 @@ import { Link, Row, Title } from "./share.styles";
 
 
 const url = "https://no-fly-zone.vercel.app/";
-const message = "Close the sky over Ukraine";
-const hashtag = "#NoFlyZoneOverUkraine"
+const message = "Every single day Ukrainian children are dying under the russian ballistic missiles! We have to stop it now!";
+const hashtag = "#CloseTheSky #NATO #NoFlyZone"
 
 
 const Share = () => {
@@ -36,7 +36,7 @@ const Share = () => {
           </Link>
         </FacebookShareButton>
 
-        <TwitterShareButton url={url} hashtags={[hashtag]} title={message}>
+        <TwitterShareButton url={url} hashtags={hashtag.replace(/#/g, '').split(" ")} title={message}>
           <Link hoverColor="#1DA1F2">
             <TwitterIcon width="42px" height="42px"/>
           </Link>
