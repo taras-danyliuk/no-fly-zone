@@ -6,16 +6,16 @@ export const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${props => props.noPadding ? "0" : "72px 156px"};
+  padding: ${(props) => (props.noPadding ? "0" : "72px 156px")};
   position: relative;
-  justify-content: ${props => props.justify || "flex-start"};
-  
-  @media screen and (max-width: 768px) {
-    padding: ${props => props.noPadding ? "0" : "64px 82px"};
+  justify-content: ${(props) => props.justify || "flex-start"};
+
+  @media screen and (max-width: 1400px) {
+    padding: ${(props) => (props.noPadding ? "0" : "64px 82px")};
   }
-  
+
   @media screen and (max-width: 576px) {
-    padding: ${props => props.noPadding ? "0" : "32px 16px"};
+    padding: ${(props) => (props.noPadding ? "0" : "32px 16px")};
   }
 `;
 
@@ -29,8 +29,8 @@ export const Hashtag = styled.header`
   @media screen and (max-width: 768px) {
     font-size: 48px;
   }
-  
+
   @media screen and (max-width: 576px) {
-    font-size: 24px; 
+    font-size: 24px;
   }
 `;
