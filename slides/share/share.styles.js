@@ -38,6 +38,14 @@ export const Link = styled.a `
   border: 1px solid #D6D6D6;
   cursor: pointer;
   margin: 0 10px;
+  
+  &:hover {
+    border-color: ${props => props.hoverColor};
+    
+    svg {
+      fill: ${props => props.hoverColor};
+    }
+  }
 
   @media screen and (max-width: 768px) {
     transform: scale(0.8);

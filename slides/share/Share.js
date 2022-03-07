@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import { Slide } from "../../components/Slide";
 import { Link, Row, Title } from "./share.styles";
+import FacebookIcon from "../../components/Icons/FacebookIcon";
+import TwitterIcon from "../../components/Icons/TwitterIcon";
+import LinkedinIcon from "../../components/Icons/LinkedinIcon";
+import ViberIcon from "../../components/Icons/ViberIcon";
+import TelegramIcon from "../../components/Icons/TelegramIcon";
+import PinterestIcon from "../../components/Icons/PinterestIcon";
 
 
 const Share = () => {
@@ -13,28 +19,28 @@ const Share = () => {
       </Title>
 
       <Row>
-        <Link>
-          <Image src="/icons/facebook-icon.svg" width="42px" height="42px"/>
+        <Link hoverColor="#1877F2">
+          <FacebookIcon width="42px" height="42px"/>
         </Link>
 
-        <Link>
-          <Image src="/icons/twitter-icon.svg" width="42px" height="42px"/>
+        <Link hoverColor="#1DA1F2">
+          <TwitterIcon width="42px" height="42px"/>
         </Link>
 
-        <Link>
-          <Image src="/icons/linkedin-icon.svg" width="42px" height="42px"/>
+        <Link hoverColor="#0A66C2">
+          <LinkedinIcon width="42px" height="42px"/>
         </Link>
 
-        <Link>
-          <Image src="/icons/viber-icon.svg" width="42px" height="42px"/>
+        <Link hoverColor="#59267C">
+          <ViberIcon width="42px" height="42px"/>
         </Link>
 
-        <Link>
-          <Image src="/icons/telegram-icon.svg" width="42px" height="42px"/>
+        <Link hoverColor="#0088CC">
+          <TelegramIcon width="42px" height="42px"/>
         </Link>
 
-        <Link>
-          <Image src="/icons/pinterest-icon.svg" width="42px" height="42px"/>
+        <Link hoverColor="#E60023">
+          <PinterestIcon width="42px" height="42px"/>
         </Link>
       </Row>
     </Slide>
