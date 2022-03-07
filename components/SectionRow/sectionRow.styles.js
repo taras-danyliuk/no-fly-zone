@@ -6,6 +6,31 @@ export const Wrapper = styled.div `
   width: 100%;
   margin: 40px 0;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`
+
+export const TextHolder = styled.div `
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%
+  }
+`
+
+export const BarHolder = styled.div `
+  position: relative;
+  flex: 1;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 80px;
+  }
 `
 
 export const Label = styled.span `
@@ -16,11 +41,14 @@ export const Label = styled.span `
   font-weight: 600;
   color: var(--text-secondary);
   text-align: center;
-`
 
-export const BarHolder = styled.div `
-  position: relative;
-  flex: 1;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 18px;
+  }
 `
 
 export const BarValue = styled.p `
@@ -30,6 +58,14 @@ export const BarValue = styled.p `
   font-size: 24px;
   line-height: 24px;
   color: var(--text-secondary);
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 18px;
+  }
 `
 
 export const Bar = styled.div `

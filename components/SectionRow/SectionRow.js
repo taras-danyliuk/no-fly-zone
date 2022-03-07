@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import Image from 'next/image'
-import { Bar, BarHolder, BarProgress, BarValue, Label, Wrapper } from "./sectionRow.styles";
+import { Bar, BarHolder, BarProgress, BarValue, Label, TextHolder, Wrapper } from "./sectionRow.styles";
 
 
 const SectionRow = ({ statistic }) => {
@@ -11,9 +11,11 @@ const SectionRow = ({ statistic }) => {
 
   return (
     <Wrapper>
-      <Image src={statistic.imgUrl || ""} width="36px" height="36px"/>
+      <TextHolder>
+        <Image src={statistic.imgUrl || ""} width="36px" height="36px"/>
 
-      <Label>{statistic.name}</Label>
+        <Label>{statistic.name}</Label>
+      </TextHolder>
 
       <BarHolder>
         <BarValue>{statistic.currentNumber}</BarValue>

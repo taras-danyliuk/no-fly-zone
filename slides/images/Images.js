@@ -8,19 +8,19 @@ const Images = () => {
     <Slide hideHashtag noPadding>
       <Wrapper>
         <ImageBlock>
-          <Image src="/images/image-17.png" layout="fill"/>
+          <Image src="/images/image-17.png" layout="fill" objectFit="cover"/>
         </ImageBlock>
 
         <ImageBlock>
-          <Image src="/images/image-18.png" layout="fill"/>
+          <Image src="/images/image-18.png" layout="fill" objectFit="cover"/>
         </ImageBlock>
 
         <ImageBlock>
-          <Image src="/images/image-19.png" layout="fill"/>
+          <Image src="/images/image-19.png" layout="fill" objectFit="cover"/>
         </ImageBlock>
 
         <ImageBlock>
-          <Image src="/images/image-20.png" layout="fill"/>
+          <Image src="/images/image-20.png" layout="fill" objectFit="cover"/>
         </ImageBlock>
 
         <TextHolder>

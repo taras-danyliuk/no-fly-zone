@@ -14,7 +14,6 @@ export const Wrapper = styled.div `
 
 export const ImageBlock = styled.div `
   height: calc(50vh - 90px);
-  background-color: pink;
   width: 100%;
   position: relative;
   
@@ -44,4 +43,14 @@ export const Text = styled.h3 `
   line-height: 61px;
   font-weight: 400;
   text-align: center;
+  
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+    line-height: 54px;
+  }
+  
+  @media screen and (max-width: 576px) {
+    font-size:  24px;
+    line-height: 42px;
+  }
 `

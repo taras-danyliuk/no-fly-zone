@@ -8,6 +8,16 @@ export const Title = styled.h2 `
   font-weight: 400;
   color: var(--text-secondary);
   margin-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+    line-height: 44px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size:  24px;
+    line-height: 40px;
+  }
 `
 
 export const SectionTitle = styled.h3 `
@@ -17,6 +27,14 @@ export const SectionTitle = styled.h3 `
   font-weight: 400;
   color: var(--text-secondary);
   margin-top: 60px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 26px;
+  }
 `
 
 export const Holder = styled.div `
