@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { CardContainer, Card } from "../../components/Card";
 import { Slide } from "../../components/Slide";
 import { PieChart } from "../../components/Charts/pie";
@@ -10,17 +10,16 @@ import {
   InfoCardValue,
   InfoCardPieContent,
 } from "./slide-home.styles";
-import { WAR_START } from "../../helpers/constants";
-import secondsToTime from "../../helpers/secondsToTime";
+import getChartValues from "../../helpers/getChartValues";
 
 
 const InfoCard = ({ borderDirection, data, pieLabel }) => {
-  const chartValue = useMemo(() => {
-    const diffInSeconds = (new Date().valueOf() - WAR_START.valueOf()) / 1000;
-    const rate = diffInSeconds / data.currentNumber;
+  const [chartValue, setChartValue] = useState(getChartValues(data));
 
-    return secondsToTime(rate, diffInSeconds);
-  }, [data.currentNumber]);
+  useEffect(() => {
+    const intervalId = setInterval(() => setChartValue(getChartValues(data)), 1000);
+    return () => clearInterval(intervalId);
+  }, [data]);
 
 
   return (

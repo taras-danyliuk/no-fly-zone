@@ -19,8 +19,6 @@ const SectionRow = ({ statistic }) => {
     [statistic.currentNumber, statistic.maxNumber]
   );
 
-  console.log(statistic.breakpoints);
-
   return (
     <Wrapper>
       <TextHolder>

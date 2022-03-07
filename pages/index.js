@@ -41,10 +41,10 @@ export async function getServerSideProps() {
   }
   const infoResult = await Info.find({}).lean();
   infoResult.forEach(doc => {
-    if (doc.name === "Kids killed") info.kids = { ...doc, _id: doc._id.toString() };
-    else if (doc.name === "Adults killed") info.adults = { ...doc, _id: doc._id.toString() };
-    else if (doc.name === "People injured") info.injured = { ...doc, _id: doc._id.toString() };
-    else if (doc.name === "Refugees") info.refugees = { ...doc, _id: doc._id.toString() };
+    if (doc.name === "Kids killed") info.kids = { ...doc, _id: doc._id.toString(), updatedAt: doc.updatedAt.toString() };
+    else if (doc.name === "Adults killed") info.adults = { ...doc, _id: doc._id.toString(), updatedAt: doc.updatedAt.toString() };
+    else if (doc.name === "People injured") info.injured = { ...doc, _id: doc._id.toString(), updatedAt: doc.updatedAt.toString() };
+    else if (doc.name === "Refugees") info.refugees = { ...doc, _id: doc._id.toString(), updatedAt: doc.updatedAt.toString() };
   });
 
   return { props: { statistics, info } };
