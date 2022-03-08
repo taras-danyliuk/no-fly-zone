@@ -23,7 +23,9 @@ const InfoCard = ({ borderDirection, data, pieLabel }) => {
 
   const current = useMemo(() => {
     if (data.currentNumber < 1000000) return data.currentNumber;
-    return `${(data.currentNumber / 1000000).toFixed(1)}M`;
+    const shorted = data.currentNumber / 1000000;
+    if (shorted % 1 !== 0) return `${shorted.toFixed(1)}M`;
+    return `${shorted}M`;
   }, [data.currentNumber])
 
 
