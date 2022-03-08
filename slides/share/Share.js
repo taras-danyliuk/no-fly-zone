@@ -16,7 +16,7 @@ import { Link, Row, Title } from "./share.styles";
 
 
 const url = "https://no-fly-zone.vercel.app/";
-const message = "Every single day Ukrainian children are dying under the russian ballistic missiles! We have to stop it now!";
+const message = "Right now russian missiles are killing Ukrainian kids! We can stop it!";
 const hashtag = "#CloseTheSky #NATO #NoFlyZone"
 
 

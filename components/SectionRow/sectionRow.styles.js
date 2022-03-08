@@ -61,11 +61,13 @@ export const BarValue = styled.p `
   color: var(--text-secondary);
 
   @media screen and (max-width: 768px) {
+    top: -28px;
     font-size: 20px;
     left: 16px;
   }
 
   @media screen and (max-width: 576px) {
+    top: -26px;
     font-size: 18px;
     left: 12px;
   }
@@ -96,6 +98,7 @@ export const BarBreakpoint = styled.div `
   justify-content: space-between;
   align-items: center;
   transform: translateX(-50%);
+  margin-right: -50px;
 `
 
 export const BreakpointTitle = styled.span `

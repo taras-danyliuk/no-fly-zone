@@ -8,7 +8,7 @@ const Statistics = ({ statistics }) => {
   return (
     <Slide>
       <Title>
-        Nato <span className="text-red">refuses</span> to close the sky over Ukraine.
+        NATO <span className="text-red">refuses</span> to close the sky over Ukraine.
         <br/>
         Is it because, <span className="text-red">the number of victims is not enough?</span>
       </Title>

@@ -15,7 +15,7 @@ const Main = ({ kids }) => {
 
       <Content>
         <Heading>
-          Nato <span>#CloseTheSky</span>
+          NATO <span>#CloseTheSky</span>
           <br/>
           Over Ukraine
         </Heading>
