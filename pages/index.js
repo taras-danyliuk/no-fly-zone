@@ -20,7 +20,8 @@ export default function Index({ info, statistics }) {
         <meta property="og:description" content="Close the sky above Ukraine" />
         <meta property="og:url" content="https://noflyzone.info/" />
         <meta property="og:image" content="https://www.noflyzone.info/images/thumb.png" />
-        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image:src" content="https://www.noflyzone.info/images/thumb.png"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
