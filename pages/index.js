@@ -25,7 +25,7 @@ export default function Index({ info, statistics }) {
       </Head>
 
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-Q9MM7R7DRH"
+        src="https://www.googletagmanager.com/gtag/js?id=G-GNEED0KWRW"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -34,7 +34,7 @@ export default function Index({ info, statistics }) {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-Q9MM7R7DRH');
+          gtag('config', 'G-GNEED0KWRW');
         `}
       </Script>
 
