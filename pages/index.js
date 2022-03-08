@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import { SlideHome } from "../slides/home";
 import dbConnect from "../lib/dbConnect";
 import Statistic from "../models/statistic";
@@ -22,6 +23,20 @@ export default function Index({ info, statistics }) {
         <meta property="twitter:card" content="summary" />
         <link rel="icon" href="/favicon.ico"/>
       </Head>
+
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-Q9MM7R7DRH"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-Q9MM7R7DRH');
+        `}
+      </Script>
 
       <Main kids={info.kids}/>
       <SlideHome info={info}/>
