@@ -33,7 +33,7 @@ export const ImageBlock = styled.div `
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.65);
   }
 
   @media screen and (max-width: 768px) {
