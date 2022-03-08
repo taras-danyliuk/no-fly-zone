@@ -95,6 +95,7 @@ export const BarBreakpoint = styled.div `
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transform: translateX(-50%);
 `
 
 export const BreakpointTitle = styled.span `
