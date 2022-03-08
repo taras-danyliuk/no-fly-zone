@@ -21,13 +21,18 @@ const InfoCard = ({ borderDirection, data, pieLabel }) => {
     return () => clearInterval(intervalId);
   }, [data]);
 
+  const current = useMemo(() => {
+    if (data.currentNumber < 1000000) return data.currentNumber;
+    return `${(data.currentNumber / 1000000).toFixed(1)}M`;
+  }, [data.currentNumber])
+
 
   return (
     <Card>
       <InfoCardWrapper borderDirection={borderDirection}>
         <div>
           <InfoCardLabel>{data.name}:</InfoCardLabel>
-          <InfoCardValue>{data.currentNumber}</InfoCardValue>
+          <InfoCardValue>{current}</InfoCardValue>
           <InfoCardDescription>During the war</InfoCardDescription>
         </div>
 

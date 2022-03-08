@@ -116,6 +116,11 @@ export const BreakpointTitle = styled.span `
     left: calc(50% - 4px);
     bottom: -7px;
   }
+  
+  @media screen and (max-width: 576px) {
+    font-size: 12px;
+    line-height: 18px;
+  }
 `
 
 export const BreakpointLine = styled.div `

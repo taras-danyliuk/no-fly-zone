@@ -27,6 +27,7 @@ export const SectionTitle = styled.h3 `
   font-weight: 400;
   color: var(--text-secondary);
   margin-top: 60px;
+  margin-bottom: 60px;
 
   @media screen and (max-width: 768px) {
     font-size: 32px;
@@ -34,6 +35,8 @@ export const SectionTitle = styled.h3 `
 
   @media screen and (max-width: 576px) {
     font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 `
 
