@@ -15,7 +15,7 @@ import PinterestIcon from "../../components/Icons/PinterestIcon";
 import { Link, Row, Title } from "./share.styles";
 
 
-const url = "https://no-fly-zone.vercel.app/";
+const url = "https://noflyzone.info/";
 const message = "Right now russian missiles are killing Ukrainian kids! We can stop it!";
 const hashtag = "#CloseTheSky #NATO #NoFlyZone"
 

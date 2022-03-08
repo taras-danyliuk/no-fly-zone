@@ -15,6 +15,10 @@ export default function Index({ info, statistics }) {
       <Head>
         <title>No Fly Zone</title>
         <meta name="description" content="Close the sky above Ukraine"/>
+        <meta property="og:title" content="No Fly Zone" />
+        <meta property="og:description" content="Close the sky above Ukraine" />
+        <meta property="og:url" content="https://noflyzone.info/" />
+        <meta property="og:image" content="/images/thumb.png" />
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
