@@ -18,7 +18,7 @@ export default function Index({ info, statistics }) {
         <meta name="description" content="Close the sky above Ukraine"/>
         <meta property="og:title" content="No Fly Zone" />
         <meta property="og:description" content="Close the sky above Ukraine" />
-        <meta property="og:url" content="https://noflyzone.info/" />
+        <meta property="og:url" content="https://www.noflyzone.info/" />
         <meta property="og:image" content="https://www.noflyzone.info/images/thumb.jpg" />
         <meta property="og:image:width" content="1200"/>
         <meta property="og:image:height" content="691"/>
